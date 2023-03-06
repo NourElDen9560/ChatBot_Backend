@@ -1,0 +1,110 @@
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/"><img
+        src="https://th.bing.com/th/id/R.e7fd5261b1be7c8536908ad941857517?rik=VZe%2fOSoNGSgh4Q&pid=ImgRaw&r=0"
+        height="35"
+        alt=" Logo"
+        loading="lazy"
+      /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+          </li>
+          
+          <li class="nav-item">
+          </li>
+      
+          
+        </ul>
+        <ul class="navbar-nav me-auto mb-2 mb-rg-0">
+            <li class="nav-item " *ngIf="!user.isLogin">
+           
+
+              </li>
+
+          
+
+              
+             
+            
+            
+              <!-- <li class="nav-item">
+                <a class="nav-link" routerLink="/myaccount" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  ><button class="btn btn-success"  > My Profile</button></a>
+              </li> -->
+              <!-- <li class="nav-item" *ngIf="user.isLogin">
+                <a class="nav-link" routerLink="/logout" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  ><button class="btn btn-info" (click)="LogOutHandler()" > LogOut</button></a>
+              </li>
+             -->
+
+        </ul>
+        <div class="d-flex align-items-center">
+          <ul class="navbar-nav">
+            <!-- Avatar -->
+            <li ngbDropdown class="nav-item dropdown" *ngIf="user.isLogin">
+              <a
+                class="nav-link dropdown-toggle d-flex align-items-center"
+                id="navbarDropdownMenuLink"
+                role="button"
+                ngbDropdownToggle
+                aria-expanded="false"
+              >
+                <img
+                src='http://localhost:3000/{{user.photo}}'  
+                  class="rounded-circle"
+                  height="25"
+                  alt=""
+                  loading="lazy"
+                />
+              </a>
+              <ul ngbDropdownMenu class="dropdown-menu"  aria-labelledby="navbarDropdownMenuLink">
+                <li>
+                  <a class="dropdown-item" routerLink="/myaccount">My profile</a>
+                </li>
+              
+                <li>
+                  <a class="dropdown-item" (click)=" LogOutHandler()">Logout</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <!-- Icon -->
+          
+    
+          <!-- Notifications -->
+          <div class="dropdown" *ngIf="user.isLogin">
+            <a
+              class="text-reset me-3 dropdown-toggle hidden-arrow"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-mdb-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fas fa-bell"></i>
+              <span class="badge rounded-pill badge-notification bg-danger">1</span>
+            </a>
+            <ul
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
+              <li>
+                <a class="dropdown-item" href="#">Some news</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Another news</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Avatar -->
+       
+        </div>
+      </div>
+    </div>
+  </nav>
+  

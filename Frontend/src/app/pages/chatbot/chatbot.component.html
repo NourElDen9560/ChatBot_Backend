@@ -1,0 +1,61 @@
+<form [formGroup]="login" (submit)="GetAutoTag()">
+
+    <div class="d-flex align-items-center mb-3 pb-1">
+      <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+      <span class="h1 fw-bold mb-0">ChatBot Project</span>
+    </div>
+
+
+    <div class="form-outline mb-4">
+      <input type="email" formControlName="data" id="Email" placeholder="Enter email" name="email"   class="form-control form-control-lg" required />
+      
+    </div>
+
+    <div class="pt-1 mb-4">
+   <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="GetAutoTag()">
+Send
+</button>
+
+
+    </div>
+
+   
+  </form>
+
+  <p>
+    
+  </p>
+  
+  <p class="response">
+
+  </p>
+<!-- Currently BROKEN!
+Working prototype on meesrutten.me :) -->
+<main class="page__main">
+  <div class="block--background">
+    <div class="chatbot__overview">
+      <ul class="chatlist">
+        <li class="bot__output bot__output--standard">Hey, I'm Navvy!</li>
+        <li class="bot__output bot__output--standard">I will guide you through Mees' portfolio!</li>
+        <li class="bot__output bot__output--standard">
+          <span class="bot__output--second-sentence">You can ask me a bunch of things!</span>
+          <ul>
+            <li class="input__nested-list">Something <span class="bot__command">about</span> Mees</li>
+            <li class="input__nested-list">Mees' <span class="bot__command">best work</span></li>
+            <li class="input__nested-list">Maybe I could <span class="bot__command">help</span> (for more instructions)</li>
+            <li class="input__nested-list">Type <span class="bot__command">commands</span> for a list of every command</li>
+          </ul>
+          You could also scroll down to see Mees' full portfolio
+        </li>
+      </ul>
+    </div>
+    <div class="chatbox-area">
+      <form [formGroup]="ChatBot"  id="chatform">
+          <textarea placeholder="Talk to me!" formControlName="answer" class="chatbox" name="chatbox" resize= "none" minlength="2"></textarea>
+          <input class="submit-button" type="submit" (click)="GetSimilarity()" value="send">
+      </form>
+    </div>
+        <div class="block--background"></div>
+  </div>
+</main>
